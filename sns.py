@@ -148,5 +148,19 @@ class SNSTopicWaiter(SNSTopicShell):
 
 if __name__ == '__main__':
     st = SNSTopicCreator()
-    testtasks = json.dumps({"email": "test123@gmail.com", "sms": "732-446-2386"})
+    testtasks = json.dumps({"email": "<EMAIL>", "sms": "<PHONE-NUMBER>"})
+    
     result, subscription_data = st._subscribe_topic_activity(testtaskjs)
+    if result:
+            sw = SNSTopicWaiter()
+            result, subscription_data = sw._wait_for_confirmation_activity(subscription_data)
+            if result:
+                    sc = SNSTopicConfirmer()
+                    if sc._send_result_activity(subscription_data):
+                            print("It worked!")
+                    else:
+                            print("Confirmation failed...")
+            else:
+                    print("Waiting failed...")
+    else:
+            print("Creation failed...")
