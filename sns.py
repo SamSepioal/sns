@@ -1,3 +1,9 @@
+import boto.sns as sns
+import json
+
+ACCESS = 'AKIAIOSFODNN7EXAMPLE'
+SECRET = 'RS{B3WAR3_0F_AW3_S3CRET_K3YS}'
+
 def main():
     print("Hello world")
 
