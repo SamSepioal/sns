@@ -1,11 +1,11 @@
+# An example of how to use AWS SNS with Python's boto
+# http://aws.amazon.com/sns/
+
 import boto.sns as sns
 import json
 
 ACCESS = '<REPLACE_WITH_ACCESS_KEY_ID>'
 SECRET = '<REPLACE_WITH_SECRET_ACCESS_KEY>'
-
-def main():
-    print("Hello world")
 
 class SNSTopicShell:
     def fail(self, reason):
