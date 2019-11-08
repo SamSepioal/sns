@@ -1,8 +1,8 @@
 import boto.sns as sns
 import json
 
-ACCESS = 'AKIAIOSFODNN7EXAMPLE'
-SECRET = 'RS{B3WAR3_0F_AW3_S3CRET_K3YS}'
+ACCESS = '<REPLACE_WITH_ACCESS_KEY_ID>'
+SECRET = '<REPLACE_WITH_SECRET_ACCESS_KEY>'
 
 def main():
     print("Hello world")
